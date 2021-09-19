@@ -1,0 +1,15 @@
+%% Data files to read
+EMG_INFO_FILE = "data_log5.mot";
+ANGLE_INFO_FILE  = "data_log_5_712.txt";
+
+%% Read data from data files
+EMGsignal_vasti = readtable(EMG_INFO_FILE,"FileType", "text");
+EMGsignal_vasti = EMGsignal_vasti{:,1};
+ANGLE_TABLE = readtable(ANGLE_INFO_FILE);
+
+%% Get column with command initiation + find the 1
+COMMAND_INIT_COLUMN = ANGLE_TABLE{:,5};
+ONE_ROW = find(diff(COMMAND_INIT_COLUMN) == 1);
+FIRST_ONE_ROW = ONE_ROW(1,:);
+
+angle_enc = ANGLE_TABLE{FIRST_ONE_ROW:height(ANGLE_TABLE), 6};
