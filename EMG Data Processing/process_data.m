@@ -1,30 +1,31 @@
 %% Data files to read
-EMG_INFO_FILE = "data_log5.mot";
-ANGLE_INFO_FILE  = "data_log_5_712.txt";
+emg_info_file = "data_log5.mot";
+angle_info_file  = "data_log_5_712.txt";
+muscle_number = 2;
 
 %% Read data from files to tables
-EMG_TABLE = readtable(EMG_INFO_FILE,"FileType", "text");
+emg_table = readtable(emg_info_file,"FileType", "text");
 % Change this to try other muscles !!
-EMGsignal_vasti = EMG_TABLE{:,1};
+EMGsignal_vasti = emg_table{:,muscle_number};
 % Read angle table of angles
-ANGLE_TABLE = readtable(ANGLE_INFO_FILE);
+angle_table = readtable(angle_info_file);
 
 %% Get column with command initiation + find the 1s
-COMMAND_INIT_COLUMN = ANGLE_TABLE{:,5};
+command_init_column = angle_table{:,5};
 % Find where ones start in the command initiation column
-ONE_ROW = find(diff(COMMAND_INIT_COLUMN) == 1);
+one_row = find(diff(command_init_column) == 1);
 % Get first and second one
-FIRST_ONE_CMD_INIT = ONE_ROW(1,:);
-SECOND_ONE_CMD_INIT = ONE_ROW(2,:);
+first_one_command_init = one_row(1,:);
+second_one_command_init = one_row(2,:);
 
 %% Get NAN Rows from EMG Data to know where to use data from
-NAN_COL = EMG_TABLE{:,8};
-[NAN_ROWS, NAN_COLS] = find(isnan(NAN_COL));
+col_with_nan = emg_table{:,8};
+[nan_rows, nan_cols] = find(isnan(col_with_nan));
 % Get first and second NAN rows
-FIRST_NAN_EMG = NAN_ROWS(1, :);
-SECOND_NAN_EMG = NAN_ROWS(2, :);
+first_nan_emg = nan_rows(1, :);
+second_nan_emg = nan_rows(2, :);
 
 
 %% Final Data to use in other script
-% Splice angle table from the first "1" to the end of table
-angle_enc = ANGLE_TABLE{FIRST_ONE_CMD_INIT:SECOND_ONE_CMD_INIT, 6};
+% Splice angle table from the first "1" to the second "1"
+angle_enc = angle_table{first_one_command_init:second_one_command_init, 6};

@@ -1,7 +1,7 @@
-PROCESS_DATA_SCRIPT = 'process_data.m';
-FILTER_DATA_SCRIPT = 'filter_data.m';
-NEURO_MUSCULAR_MODEL_SCRIPT = 'NMM_script2.m';
+process_data_script = 'process_data.m';
+filter_data_script = 'filter_data.m';
+neuro_muscular_model_script = 'NMM_script2.m';
 
-run(PROCESS_DATA_SCRIPT);
-run(FILTER_DATA_SCRIPT);
-run(NEURO_MUSCULAR_MODEL_SCRIPT);
+run(process_data_script);
+run(filter_data_script);
+run(neuro_muscular_model_script);
