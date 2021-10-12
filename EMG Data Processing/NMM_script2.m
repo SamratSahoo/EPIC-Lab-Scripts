@@ -134,6 +134,6 @@ previous_MTU_length = MTU_length;
 extension_torque = muscle_force*lever_arm;
 assistance (iteration) = extension_torque*Assistance_pct;
 end
-
+assistance_vasti = assistance;
 time = [1:length(EMGsignal)].*iteration_time + initial_time;
 plot(time,assistance)

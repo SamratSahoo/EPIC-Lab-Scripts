@@ -1,7 +1,6 @@
 %% Data files to read
 emg_info_file = "data_log5.mot";
 angle_info_file  = "data_log_5_712.txt";
-muscle_number = 2;
 
 %% Read data from files to tables
 emg_table = readtable(emg_info_file,"FileType", "text");

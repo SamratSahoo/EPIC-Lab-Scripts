@@ -5,7 +5,6 @@ lowpass_frequency = 6;
 sampling_frequency = 1000;
 filter_order = 4;
 downsampling_factor = 5;
-muscle_number = 3;
 
 %% Get EMG + Filter Data between two NAN Values
 % Change second number for different muscles
@@ -25,3 +24,9 @@ emg_goniometer_data_downsampled = downsample(emg_goniometer_data_lowpass,downsam
 % Final data to be used in NMM_script2.m
 angle_enc = angle_enc(1:length(emg_goniometer_data_downsampled),:);
 EMGsignal_vasti = emg_goniometer_data_downsampled;
+
+%% Filtered EMG + Angle (Cols 2 3 4) VS Time
+%[time,filler] = size(emg_goniometer_data_downsampled);
+%time = 1:time;
+%plot(time, emg_goniometer_data_downsampled);
+%xlabel('Time'), ylabel('Biceps Femoris Filtered EMG Data')
