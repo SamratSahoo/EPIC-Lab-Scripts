@@ -62,7 +62,7 @@ def display_on_board(text):
         image1 = Image.new('1', (show.width, show.height), "WHITE")
         draw = ImageDraw.Draw(image1)
         draw.rectangle((0, 0, 127, 31), outline=0)
-        draw.text((20, 0), text)
+        draw.text((20, 0), text, font = ImageFont.truetype('Font.ttf',15))
         show.ShowImage(show.getbuffer(image1))
         time.sleep(2)
 
