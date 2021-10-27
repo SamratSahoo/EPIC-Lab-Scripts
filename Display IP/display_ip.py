@@ -2,14 +2,14 @@ import socket
 import time
 import urllib
 
-import SSD1306
+# import SSD1306
 from PIL import Image, ImageDraw, ImageFont
 
 
 def wait_for_internet_connection():
     while True:
         try:
-            response = urllib.request.urlopen('http://74.125.113.99', timeout=1)
+            socket.create_connection(("www.google.com", 80))
             return
         except Exception as e:
             pass
@@ -18,6 +18,7 @@ def wait_for_internet_connection():
 def get_ip():
     wait_for_internet_connection()
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    IP = '127.'
     try:
         while '127' in IP:
             s.connect(('10.255.255.255', 1))
