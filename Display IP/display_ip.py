@@ -3,6 +3,7 @@ import time
 import SSD1306
 from PIL import Image, ImageDraw, ImageFont
 import threading
+from limit_memory import memory
 
 
 def wait_for_internet_connection():
@@ -57,6 +58,7 @@ def display_on_board(text):
         show.Closebus()
 
 
+@memory(percentage=0.8)
 def main():
     IP = get_ip()
     display_on_board(IP)
