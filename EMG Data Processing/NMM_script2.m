@@ -2,7 +2,7 @@
 
 %fixed parameters
 frequency = 200; % (Hz)
-EMGdelay = 0.2; %(s)  - EMG
+EMGdelay = 0; %(s)  - EMG
 Tact = 0.01; %(s) - Activation Dynamics
 Tdeact = 0.04; %(s) - Activation Dynamics
 Fmax = 5000; %(N) - Tendon Dynamics, Active Muscle Dynamics
@@ -13,7 +13,7 @@ a = 3.1108; % (FL relationships) - Active Muscle Dynamics
 b = .8698; % (FL relationships) - Active Muscle Dynamics
 B = 5.31; % (passive relationships) - Passive Muscle Dynamics
 lever_arm = 0.0475; %(m) - MTU Length
-B_tendon = 2750; %(N*s/m) tendon damping
+B_tendon = 55000; %(N*s/m) tendon damping
 
 %variable parameters
 EMGgain = 0.8; %runs from 0 to 1 where 1 is complete EMG and 0 is no EMG  - EMG
