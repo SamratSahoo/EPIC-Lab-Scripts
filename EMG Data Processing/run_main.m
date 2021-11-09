@@ -15,7 +15,7 @@ for muscle_number = 2:4
     end
     hold on;
 end
-run(rio_data_script);
-%plot(time,combined_assistance);
+%run(rio_data_script);
+plot(time,combined_assistance);
 %hold on;
-%plot(time,biological_torque_estimate)
+%plot(time,biological_torque_estimate*(0.6/max(biological_torque_estimate)))

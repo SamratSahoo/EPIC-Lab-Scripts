@@ -136,4 +136,5 @@ assistance (iteration) = extension_torque*Assistance_pct;
 end
 assistance_vasti = assistance;
 time = [1:length(EMGsignal)].*iteration_time + initial_time;
+assistance = assistance*(0.6/max(assistance));
 plot(time,assistance)
