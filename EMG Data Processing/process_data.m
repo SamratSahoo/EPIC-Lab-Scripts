@@ -1,6 +1,6 @@
 %% Data files to read
-emg_info_file = "data_log5.mot";
-angle_info_file  = "data_log_5_712.txt";
+emg_info_file = "data\data_log_1109_1_b.mot";
+angle_info_file  = "data\datal_log_1109_1b.txt";
 
 %% Read data from files to tables
 emg_table = readtable(emg_info_file,"FileType", "text");
