@@ -1,12 +1,13 @@
 %% Data files to read
-emg_info_file = "data\data_log_1109_1_b.mot";
-angle_info_file  = "data\datal_log_1109_1b.txt";
+emg_info_file = "data/data_log5.mot";
+angle_info_file  = "data/data_log_5_712.txt";
 
 %% Read data from files to tables
 emg_table = readtable(emg_info_file,"FileType", "text");
 % Change this to try other muscles !!
 EMGsignal_vasti = emg_table{:,muscle_number};
 % Read angle table of angles
+% load(angle_info_file)
 angle_table = readtable(angle_info_file);
 
 %% Get column with command initiation + find the 1s
@@ -23,7 +24,6 @@ col_with_nan = emg_table{:,8};
 % Get first and second NAN rows
 first_nan_emg = nan_rows(1, :);
 second_nan_emg = nan_rows(2, :);
-
 
 %% Final Data to use in other script
 % Splice angle table from the first "1" to the second "1"
