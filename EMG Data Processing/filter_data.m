@@ -18,8 +18,7 @@ emg_goniometer_data_bandpass = filtfilt(B,A,emg_goniometer_data_center);
 emg_goniometer_data_absolute = abs(emg_goniometer_data_bandpass);
 % Apply lowpass filter w/following attributes
 [b, a] = butter(filter_order,lowpass_frequency /(sampling_frequency/2), "low");
-emg_goniometer_data_lowpass =  filtfilt(b, a, emg_goniometer_data_absolute);
-% EMG_GONIOMETER_DATA_LOWPASS = filter(lowpass_filt, EMG_GONIOMETER_DATA_ABSOLUTE);
+emg_goniometer_data_lowpass =  filtfilt(b, a, emg_goniometer_data_absolute);    
 emg_goniometer_data_downsampled = downsample(emg_goniometer_data_lowpass,downsampling_factor);
 % Final data to be used in NMM_script2.m
 angle_enc = angle_enc(1:length(emg_goniometer_data_downsampled),:);

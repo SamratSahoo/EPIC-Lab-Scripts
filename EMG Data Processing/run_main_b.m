@@ -1,7 +1,7 @@
 clear
 
 muscles = ["Vasti_l", "Hamstring_l", "Gastroc_l"];
-filter_data_script = "filter_data_b.m";
+filter_data_script = "filter_data_b.m"; 
 neuro_muscular_model_script = 'NMM_script2.m';
 process_data_script = "process_data_b.m";
 combined_assistance = 0;
@@ -18,5 +18,5 @@ for muscle_number = 1:3
     hold on;
 end
 
-plot(time,combined_assistance);
+plot(time,combined_assistance,'color',[1 .41 .70]);
 
