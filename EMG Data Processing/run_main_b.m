@@ -19,4 +19,3 @@ for muscle_number = 1:3
 end
 
 plot(time,combined_assistance,'color',[1 .41 .70]);
-
