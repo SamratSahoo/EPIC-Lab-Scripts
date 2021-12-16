@@ -20,4 +20,6 @@ end
 
 plot(time,abs(combined_assistance),'color',[1 .41 .70]);
 hold on;
-plot(time, Ttable1{:,"Torque_l"}, 'color',[0 0 0.5]);
+torque_l = Ttable1{:,"Torque_l"};
+plot(time, torque_l(1:length(combined_assistance),:), 'color',[0 0 0.5]);
+legend('Combined Assistance', "Torque")

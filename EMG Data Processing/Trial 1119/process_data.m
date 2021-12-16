@@ -22,4 +22,4 @@ second_nan_emg = nan_rows(2, :);
 %% Final Data to use in other script
 % Splice angle table from the first "1" to the second "1"
 angle_enc = angle_table{first_one_command_init:second_one_command_init, "Angle_r"};
-angle_enc = angle_enc / max(abs(angle_enc));
+angle_enc = abs(angle_enc*pi/180);
